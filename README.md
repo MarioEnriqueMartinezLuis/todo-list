@@ -1,3 +1,10 @@
+#CLONAR PROYECTO
+1. Abrir la terminal de windows O bra Git Bash.
+2. Cambia el directorio de trabajo actual a la ubicación en donde quieres clonar el directorio.
+3. Escriba git clone y pegue la dirección URL que ha copiado antes.
+  * git clone https://github.com/MarioEnriqueMartinezLuis/todo-list.git
+4. Presione Enter para crear el clon local.
+
 # INSTALACIÓN DEL PROYECTO
 1. Abrir la terminal de windows
 2. Ubicarnos en de dirección del proyecto
