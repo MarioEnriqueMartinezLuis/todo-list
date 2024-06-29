@@ -1,8 +1,8 @@
 # INSTALACIÓN DEL PROYECTO
-1.- Abrir la terminal de windows
-2.- Ubicarnos en de dirección del proyecto
-3.- Ejecutar el comando npm install
-4.- Una vez finalizada la instalación de dependencias ejecutar el comando npm start
+1. Abrir la terminal de windows
+2. Ubicarnos en de dirección del proyecto
+3. Ejecutar el comando npm install
+4. Una vez finalizada la instalación de dependencias ejecutar el comando npm start
 
 # Getting Started with Create React App
 
