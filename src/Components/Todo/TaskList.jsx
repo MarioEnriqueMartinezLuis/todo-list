@@ -1,8 +1,9 @@
 import Swal from "sweetalert2";
 import { TrashIcon } from "../Icons/TrashIcon";
 import { NavLink } from "react-router-dom";
+import { saveTaskList } from "../../Functions/SaveTaskList";
 
-function TaskList({ dataList, setDataList, pointEvents }) {
+function TaskList({ dataList, setDataList, pointEvents, curentTaskId }) {
   const onClickRemoveItem = (currentId) => {
     Swal.fire({
       title: "Esta a punto de eliminar la tarea",
@@ -15,8 +16,12 @@ function TaskList({ dataList, setDataList, pointEvents }) {
       if (result.isConfirmed) {
         const updateList = dataList.filter((task) => currentId !== task.id);
         setDataList(updateList);
-        if (!pointEvents)
+        if (pointEvents) {
           window.localStorage.setItem("taskList", JSON.stringify(updateList));
+        } else {
+          saveTaskList(curentTaskId, updateList);
+        }
+
         Swal.fire({
           title: "Tarea eliminada",
           icon: "success",
