@@ -1,4 +1,4 @@
-#CLONAR PROYECTO
+# CLONAR PROYECTO
 1. Abrir la terminal de windows O bra Git Bash.
 2. Cambia el directorio de trabajo actual a la ubicación en donde quieres clonar el directorio.
 3. Escriba git clone y pegue la dirección URL que ha copiado antes.
