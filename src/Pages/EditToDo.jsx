@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import TaskList from "../Components/Todo/TaskList";
 import { BackIcon } from "../Components/Icons/BackIcon";
 import Swal from "sweetalert2";
+import { saveTaskList } from "../Functions/SaveTaskList";
 
 function EditToDo() {
   const params = useParams();
@@ -13,13 +14,14 @@ function EditToDo() {
   const handleAddItem = (addItem) => {
     let data = [...taskList, addItem];
     setTaskList(data);
-    // window.localStorage.setItem("taskList", JSON.stringify(data));
+    saveTaskList(params.id, data);
   };
 
   useEffect(() => {
     let data = JSON.parse(window.localStorage.getItem("taskList"));
-    setCurrentTask(buscarPorId(data, params.id));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    let _currentTask = buscarPorId(data, params.id);
+    setCurrentTask(_currentTask);
+    setTaskList(_currentTask.tasklist || []);
   }, []);
 
   const buscarPorId = (array, id) => {
@@ -78,7 +80,7 @@ function EditToDo() {
       </section>
       <section className="make-to-do row-span-*">
         <article className="flex justify-center pr-5">
-          <FormTodo setDataList={setTaskList} handleAddItem={handleAddItem} />
+          <FormTodo handleAddItem={handleAddItem} />
         </article>
       </section>
       <section className="content-to-do row-span-*">
@@ -90,6 +92,7 @@ function EditToDo() {
             dataList={taskList}
             setDataList={setTaskList}
             pointEvents={false}
+            curentTaskId={params.id}
           />
         </article>
       </section>
