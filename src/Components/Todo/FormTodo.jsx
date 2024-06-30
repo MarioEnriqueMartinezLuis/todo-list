@@ -2,7 +2,7 @@ import { useState } from "react";
 import ClasicButton from "../Buttons/ClasicButton";
 import Swal from "sweetalert2";
 
-function FormTodo({ setDataList, handleAddItem }) {
+function FormTodo({ handleAddItem }) {
   const [taskName, setTaskName] = useState("");
   const onclickEvt = () => {
     if (taskName.length === 0) {
@@ -17,6 +17,7 @@ function FormTodo({ setDataList, handleAddItem }) {
       handleAddItem({
         id: (+new Date()).toString(),
         label: taskName,
+        tasklist: [],
       });
 
       Swal.fire({
