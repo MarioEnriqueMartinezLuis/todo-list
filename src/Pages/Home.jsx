@@ -6,7 +6,7 @@ function Home() {
   const [taskList, setTaskList] = useState([]);
 
   useEffect(() => {
-    setTaskList(JSON.parse(window.localStorage.getItem("taskList")));
+    setTaskList(JSON.parse(window.localStorage.getItem("taskList")) || [] );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
