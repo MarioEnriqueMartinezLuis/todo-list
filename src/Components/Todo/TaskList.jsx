@@ -47,7 +47,7 @@ function TaskList({ dataList, setDataList, pointEvents, curentTaskId }) {
                   to={`/todo/${task.id}`}
                   className="hover:bg-blue-700/50 hover:text-white"
                 >
-                  {task.label}
+                  {`${task.label} ( ${task.tasklist.length} subtareas)` }
                 </NavLink>
               )}
               {!pointEvents && task.label}
