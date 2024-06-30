@@ -29,7 +29,7 @@ function Home() {
         </section>
         <section className="make-to-do row-span-*">
           <article className="flex justify-center pr-5">
-            <FormTodo setDataList={setTaskList} handleAddItem={handleAddItem} />
+            <FormTodo handleAddItem={handleAddItem} />
           </article>
         </section>
         <section className="content-to-do row-span-*">
